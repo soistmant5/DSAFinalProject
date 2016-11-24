@@ -32,4 +32,63 @@ public class Driver {
         System.out.println("\t10. Close the Shopping Center.");
         System.out.println("Please make your selection now: ");
     }
+
+    private void runMenuFunctions() {
+        int inputNum;
+        do {
+            inputNum = Integer.parseInt(readInput());
+            switch (inputNum) {
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
+                case 10:
+                    exit();
+                    break;
+                default:
+                    System.out.println("Please select a valid menu option.");
+                    break;
+            }
+        } while (inputNum != 10);
+    }
+
+    private void exit() {
+        System.out.println("You have successfully quit the program.");
+        System.exit(1);
+    }
+
+    private String readInput() {
+        String result = "";
+        try {
+            result = stdin.readLine().trim();
+            System.out.println(result);
+        } catch (Exception e) {
+            System.out.println("Error reading input.");
+        }
+        return result;
+    }
+
 }
