@@ -14,8 +14,6 @@ public class ShoppingCenter {
     private QueueArrayBased expressCheckout;
 
     public ShoppingCenter() {
-        //normalCheckout1 = new QueueArrayBased();
-        // FUCK github
 
     }
 }

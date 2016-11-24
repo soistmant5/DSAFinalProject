@@ -12,9 +12,27 @@ import java.io.*;
 public class Driver {
 
     private static BufferedReader stdin;
+    private ListArrayBasedPlus listOfShoppers;
+    private ListArrayBasedPlus listOfInventoryItems;
 
     public Driver() {
         stdin = new BufferedReader(new InputStreamReader(System.in));
+        listOfShoppers = new ListArrayBasedPlus();
+        listOfInventoryItems = new ListArrayBasedPlus();
+    }
+
+    private void initializeInventory() {
+        System.out.println("Welcome to the Soistmann-Messner Shopping Center!");
+        System.out.println("To begin, enter the number of inventory items the store has in stock: ");
+        int inventoryNum = Integer.parseInt(readInput());
+        for (int i = 0; i <= inventoryNum; i++) {
+            System.out.println("Enter inventory item " + (inventoryNum + 1) + ": ");
+            String item = readInput();
+            listOfInventoryItems.add(i, item);
+        }
+
+        System.out.println("The store is ready to open up for the day.");
+        System.out.println("")
     }
 
     private void printMenu() {
@@ -39,7 +57,9 @@ public class Driver {
             inputNum = Integer.parseInt(readInput());
             switch (inputNum) {
                 case 1:
-
+                    System.out.println("Please enter the name of the customer entering the store: ");
+                    String customerName = readInput();
+                    listOfShoppers.add(listOfShoppers.size() - 1, customerName);
                     break;
                 case 2:
 
