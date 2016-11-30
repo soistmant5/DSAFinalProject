@@ -30,4 +30,8 @@ public class Shopper {
     public int getTime() {
         return time;
     }
+
+    public String toString() {
+        return "Customer name: " + name + "; Items in cart: " + numItems + "; Time spent in store: " + time + " minutes.";
+    }
 }

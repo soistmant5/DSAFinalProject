@@ -30,4 +30,8 @@ public class InventoryItem {
     public int getMinStock() {
         return minStock;
     }
+
+    public String toString() {
+        return "Item name: " + name + "; Current Stock: " + numInStock;
+    }
 }

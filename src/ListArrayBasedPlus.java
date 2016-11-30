@@ -36,11 +36,11 @@ public class ListArrayBasedPlus extends ListArrayBased {
     }
 
     public String toString() {
-        String returnString = "Items currently in the list:";
+        String result = "";
         for (int i = 0; i < items.length; i++) {
-            returnString += (" " + items[i]);
+            result += (" " + items[i]);
         }
-        return returnString;
+        return result;
     }
 
 }
