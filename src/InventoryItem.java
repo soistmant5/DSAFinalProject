@@ -42,4 +42,12 @@ public class InventoryItem {
     public void addNumInStock(int stock){
         numInStock += stock;
     }
+
+    public boolean lowStock(){
+        if(numInStock <= minStock){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

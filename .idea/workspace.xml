@@ -4,7 +4,7 @@
     <list default="true" id="4647548e-3373-41f5-9942-526aea8dfdd2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Driver.java" afterPath="$PROJECT_DIR$/src/Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ShoppingCenter.java" afterPath="$PROJECT_DIR$/src/ShoppingCenter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InventoryItem.java" afterPath="$PROJECT_DIR$/src/InventoryItem.java" />
     </list>
     <ignored path="DSAFinalProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,7 +53,7 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="CheckOutLines.java" pinned="false" current-in-tab="true">
+            <file leaf-file-name="CheckOutLines.java" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/CheckOutLines.java">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="-376">
@@ -66,6 +66,16 @@
                       <element signature="e#712#713#0" expanded="true" />
                       <element signature="e#750#751#0" expanded="true" />
                     </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="InventoryList.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/InventoryList.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1155">
+                    <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+                    <folding />
                   </state>
                 </provider>
               </entry>
@@ -108,21 +118,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InventoryList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/InventoryList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="e#152#153#0" expanded="true" />
-                <element signature="e#215#216#0" expanded="true" />
-                <element signature="e#438#439#0" expanded="true" />
-                <element signature="e#481#482#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ListArrayBasedPlus.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ListArrayBasedPlus.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -136,8 +131,8 @@
       <file leaf-file-name="InventoryItem.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/InventoryItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+            <state relative-caret-position="944">
+              <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
               <folding>
                 <element signature="e#660#661#0" expanded="true" />
                 <element signature="e#738#739#0" expanded="true" />
@@ -153,7 +148,7 @@
       <file leaf-file-name="ShoppingCenter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ShoppingCenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1104">
+            <state relative-caret-position="1472">
               <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding>
                 <element signature="e#517#518#0" expanded="true" />
@@ -190,8 +185,8 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="192" column="64" selection-start-line="192" selection-start-column="64" selection-end-line="192" selection-end-column="64" />
+            <state relative-caret-position="1043">
+              <caret line="242" column="1" selection-start-line="242" selection-start-column="1" selection-end-line="242" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -245,12 +240,12 @@
         <option value="$PROJECT_DIR$/src/ListArrayBasedPlus.java" />
         <option value="$PROJECT_DIR$/src/ListArrayBased.java" />
         <option value="$PROJECT_DIR$/src/BinarySearch.java" />
-        <option value="$PROJECT_DIR$/src/InventoryList.java" />
-        <option value="$PROJECT_DIR$/src/InventoryItem.java" />
         <option value="$PROJECT_DIR$/src/Customer.java" />
         <option value="$PROJECT_DIR$/src/CustomerCollection.java" />
         <option value="$PROJECT_DIR$/src/CheckOutLines.java" />
         <option value="$PROJECT_DIR$/src/ShoppingCenter.java" />
+        <option value="$PROJECT_DIR$/src/InventoryItem.java" />
+        <option value="$PROJECT_DIR$/src/InventoryList.java" />
         <option value="$PROJECT_DIR$/src/Driver.java" />
       </list>
     </option>
@@ -796,7 +791,7 @@
       <workItem from="1480455324422" duration="4130000" />
       <workItem from="1480467633195" duration="610000" />
       <workItem from="1480468300901" duration="2498000" />
-      <workItem from="1480549811740" duration="22994000" />
+      <workItem from="1480549811740" duration="24877000" />
     </task>
     <task id="LOCAL-00001" summary="Test Commit">
       <created>1479854485761</created>
@@ -868,11 +863,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480611552303</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Customer physically checking out is complete&#10;&#10;new methods added.">
+      <created>1480612906363</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1480612906363</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37285000" />
+    <option name="totallyTimeSpent" value="39168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="0" width="1462" height="1551" extended-state="0" />
@@ -889,7 +891,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20682451" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22423398" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -927,7 +929,8 @@
     <MESSAGE value="Started with &quot;Customer finished shopping&quot;" />
     <MESSAGE value="Customer finished shopping menu is complete.&#10;&#10;New class was created that handles the checkout lines&#10;Methods created to acess all the QueueArrayBased&#10;&#10;There are errors in the project, but they are caused by the restructuring of the class hierarchy and have not been addressed yet." />
     <MESSAGE value="Printing out the status of each line is complete.&#10;&#10;Is there a more ELEGANT method than calling a subclass multiple times from the driver?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Printing out the status of each line is complete.&#10;&#10;Is there a more ELEGANT method than calling a subclass multiple times from the driver?" />
+    <MESSAGE value="Customer physically checking out is complete&#10;&#10;new methods added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Customer physically checking out is complete&#10;&#10;new methods added." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1462,19 +1465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/InventoryList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#152#153#0" expanded="true" />
-            <element signature="e#215#216#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#481#482#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -1487,53 +1477,6 @@
             <element signature="e#717#718#0" expanded="true" />
             <element signature="e#739#740#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ListArrayBasedPlus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InventoryItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-          <folding>
-            <element signature="e#660#661#0" expanded="true" />
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#786#787#0" expanded="true" />
-            <element signature="e#821#822#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ListArrayBased.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BinarySearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QueueArrayBased.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-777">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1567,9 +1510,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ListArrayBasedPlus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QueueArrayBased.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-777">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ShoppingCenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1104">
+        <state relative-caret-position="1472">
           <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
             <element signature="e#517#518#0" expanded="true" />
@@ -1592,10 +1551,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/BinarySearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ListArrayBased.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InventoryItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="944">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+          <folding>
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#899#900#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InventoryList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="192" column="64" selection-start-line="192" selection-start-column="64" selection-end-line="192" selection-end-column="64" />
+        <state relative-caret-position="1043">
+          <caret line="242" column="1" selection-start-line="242" selection-start-column="1" selection-end-line="242" selection-end-column="1" />
           <folding />
         </state>
       </provider>
