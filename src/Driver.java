@@ -152,7 +152,7 @@ public class Driver {
 
     private void customerShopping(){
         System.out.print("Please enter the name of the customer who is adding to their cart: ");
-        Customer c = shoppingCenter.getCustCollection().getCustomer(read());
+        Customer c = shoppingCenter.getCustCollection().getPosOfCustomer(read());
         //Customer c = getCustomer(); //method call that searches for a customer and returns a shopper
 
 
@@ -174,7 +174,7 @@ public class Driver {
     }
 
     private void customerRemoveItem(){
-        Customer c = shoppingCenter.getCustCollection().getCustomer(read());
+        Customer c = shoppingCenter.getCustCollection().getPosOfCustomer(read());
         System.out.print("Enter the number of items to remove from cart: ");
         c.removeItems(Integer.parseInt(read()));
         System.out.println("");
@@ -182,6 +182,7 @@ public class Driver {
     }
 
     private void customerFinishedShopping(){
+        shoppingCenter.completeShopping();
         //search for the longest time that one customer has been in the shopping center
 
         //based on the amount of items, the customers get added to checkout lines

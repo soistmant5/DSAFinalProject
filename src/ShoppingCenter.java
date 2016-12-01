@@ -56,8 +56,6 @@ public class ShoppingCenter {
         }
     }
 
-
-
     public QueueArrayBased getNormalCheckout1() {
         return normalCheckout1;
     }
@@ -71,5 +69,9 @@ public class ShoppingCenter {
     }
 
     //increments the time that each customer has been in the store by 1
+
+    public void completeShopping(){
+
+    }
 
 }
