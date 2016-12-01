@@ -50,8 +50,9 @@ public class Driver {
             int minQuantity = Integer.parseInt(read());
             System.out.println("");
             InventoryItem item = new InventoryItem(itemName, quantity, minQuantity);
-            shoppingCenter.addInventoryItem(i, item);
+            shoppingCenter.addInventoryItem(item);
         }
+
 
         System.out.println("The store is now ready to open up for the day.");
         System.out.println("The inventory you are beginning the day with is:\n\t" + shoppingCenter.getListOfInventoryItems().toString());
@@ -166,8 +167,9 @@ public class Driver {
         System.out.print("\nEnter the number of items you would like to add to your shopping cart: ");
         int amount = Integer.parseInt(read());
 
-        //once the search is successful
-        //pass item to customers shopping cart
+        c.addItems(amount); //updates the total items the customer has
+        shoppingCenter.incrementAllTime();
+
 
     }
 

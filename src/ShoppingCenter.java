@@ -9,7 +9,7 @@
  */
 public class ShoppingCenter {
 
-    private ListArrayBasedPlus listOfInventoryItems;
+    private InventoryList stock;
     private CustomerCollection custCollection;
     private QueueArrayBased normalCheckout1;
     private QueueArrayBased normalCheckout2;
@@ -18,28 +18,32 @@ public class ShoppingCenter {
     public ShoppingCenter() {
 
         custCollection = new CustomerCollection();
-        listOfInventoryItems = new ListArrayBasedPlus();
+        stock = new InventoryList();
         normalCheckout1 = new QueueArrayBased();
         normalCheckout2 = new QueueArrayBased();
         expressCheckout = new QueueArrayBased();
     }
 
-    public void addInventoryItem(int index, InventoryItem item) {
-        listOfInventoryItems.add(index, item);
-    }
+
 
     public void addShopper(Customer customer) {
         custCollection.addShopper(customer);
+    }
 
+    public void addInventoryItem(InventoryItem item) {
+        stock.addInventoryItem(item);
+    }
+
+    public ListArrayBasedPlus getListOfInventoryItems() {
+        return stock.getListOfInventoryItems();
+    }
 
     public void addToCheckoutLines(Customer customer) {
         if (customer.getNumItems() <= 5) {
 
         }
     }
-    public ListArrayBasedPlus getListOfInventoryItems() {
-        return listOfInventoryItems;
-    }
+
 
     public ListArrayBasedPlus getListOfCustomers() {
         return custCollection.getListOfCustomers();
@@ -55,5 +59,14 @@ public class ShoppingCenter {
 
     public QueueArrayBased getExpressCheckout() {
         return expressCheckout;
+    }
+
+    //increments the time that each customer has been in the store by 1
+    public void incrementAllTime(){
+
+        for(int i = 0; i < custCollection.getListOfCustomers().numItems; i++){
+            Customer c = (Customer) custCollection.getListOfCustomers().get(i);
+            c.incrementTime();
+        }
     }
 }

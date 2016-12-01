@@ -31,6 +31,14 @@ public class Customer {
         return time;
     }
 
+    public void addItems(int amount){
+        numItems += amount;
+    }
+
+    public void incrementTime(){
+        time++;
+    }
+
     public String toString() {
         return "Customer name: " + name + "; Items in cart: " + numItems + "; Time spent in store: " + time + " minutes.";
     }
