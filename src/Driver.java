@@ -190,6 +190,15 @@ public class Driver {
     }
 
     private void customerChecksOut(){
+        System.out.print("Would you like to continue Shopping");
+        String answer = read();
+        Customer c = shoppingCenter.checkOut(answer);
+        if(answer.equals("Yes")){
+            System.out.println("\n Customer: " + c.getName() + " has decided to continue Shopping");
+        }else{
+            System.out.println("Customer: " + c.getName() + " has " +
+                    "finished Shopping and has left the building");
+        }
         //customers get the choice to return shopping
     }
 

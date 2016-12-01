@@ -56,8 +56,21 @@ public class ShoppingCenter {
     //Queue and returns the list the customer was added to.
     public String completeShopping(){
         Customer c = custCollection.findCustomerLongestTime();
-        c = (Customer) checkOut.addToCheckoutLines(c).peek();
-        return c.getName();
+        return addCustomerToCheckOutLines(c).getName();
+    }
+
+    private Customer addCustomerToCheckOutLines(Customer c){
+        return (Customer) checkOut.addToCheckoutLines(c).peek();
+    }
+
+    public Customer checkOut(String answer){
+        Customer c = (Customer) checkOut.orderOfCheckout().dequeue();
+        if(answer.equals("Yes")){
+            return addCustomerToCheckOutLines(c);
+        }
+        else{
+            return c;
+        }
     }
 
 }
