@@ -7,13 +7,13 @@
  * @author Joseph Messner
  * @version 2016.11.22
  */
-public class Shopper {
+public class Customer {
 
     private String name;
     private int numItems;
     private int time;
 
-    public Shopper(String name) {
+    public Customer(String name) {
         this.name = name;
         numItems = 0;
         time = 0;
