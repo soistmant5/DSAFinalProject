@@ -151,8 +151,9 @@ public class Driver {
     }
 
     private void customerShopping(){
-
-        Customer c = getCustomer(); //method call that searches for a customer and returns a shopper
+        System.out.print("Please enter the name of the customer who is adding to their cart: ");
+        Customer c = shoppingCenter.getCustCollection().getCustomer(read());
+        //Customer c = getCustomer(); //method call that searches for a customer and returns a shopper
 
 
         System.out.println("\n\n List of Inventory Items: ");
@@ -173,9 +174,9 @@ public class Driver {
     }
 
     private void customerRemoveItem(){
-        Customer c = getCustomer();
+        Customer c = shoppingCenter.getCustCollection().getCustomer(read());
         System.out.print("Enter the number of items to remove from cart: ");
-        int remove = Integer.parseInt(read());
+        c.removeItems(Integer.parseInt(read()));
         System.out.println("");
         //decrease the items in the customers shopping cart by the number of items they want to remove.
     }
@@ -226,13 +227,5 @@ public class Driver {
         // numInStock++
     }
 
-    private Customer getCustomer(){
-        System.out.print("Please enter the name of the customer who is adding to their cart: ");
-        String name = read();
-        System.out.println("");
-        Customer c = null;
-        //search for customer in this method
 
-        return c;
-    }
 }

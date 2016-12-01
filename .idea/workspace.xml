@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4647548e-3373-41f5-9942-526aea8dfdd2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Customer.java" afterPath="$PROJECT_DIR$/src/Customer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Driver.java" afterPath="$PROJECT_DIR$/src/Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InventoryItem.java" afterPath="$PROJECT_DIR$/src/InventoryItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ShoppingCenter.java" afterPath="$PROJECT_DIR$/src/ShoppingCenter.java" />
     </list>
     <ignored path="DSAFinalProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,8 +29,8 @@
             <file leaf-file-name="CustomerCollection.java" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/CustomerCollection.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="883">
-                    <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+                  <state relative-caret-position="916">
+                    <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
                     <folding>
                       <element signature="e#159#160#0" expanded="true" />
                       <element signature="e#217#218#0" expanded="true" />
@@ -76,13 +75,15 @@
       <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+            <state relative-caret-position="840">
+              <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
               <folding>
                 <element signature="e#573#574#0" expanded="true" />
                 <element signature="e#607#608#0" expanded="true" />
-                <element signature="e#641#642#0" expanded="true" />
-                <element signature="e#663#664#0" expanded="true" />
+                <element signature="e#649#650#0" expanded="true" />
+                <element signature="e#683#684#0" expanded="true" />
+                <element signature="e#717#718#0" expanded="true" />
+                <element signature="e#739#740#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,8 +163,8 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="861">
-              <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+            <state relative-caret-position="845">
+              <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -216,13 +217,13 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/ListArrayBasedPlus.java" />
         <option value="$PROJECT_DIR$/src/ListArrayBased.java" />
-        <option value="$PROJECT_DIR$/src/Customer.java" />
         <option value="$PROJECT_DIR$/src/BinarySearch.java" />
         <option value="$PROJECT_DIR$/src/InventoryList.java" />
         <option value="$PROJECT_DIR$/src/ShoppingCenter.java" />
-        <option value="$PROJECT_DIR$/src/CustomerCollection.java" />
-        <option value="$PROJECT_DIR$/src/Driver.java" />
         <option value="$PROJECT_DIR$/src/InventoryItem.java" />
+        <option value="$PROJECT_DIR$/src/CustomerCollection.java" />
+        <option value="$PROJECT_DIR$/src/Customer.java" />
+        <option value="$PROJECT_DIR$/src/Driver.java" />
       </list>
     </option>
   </component>
@@ -231,6 +232,13 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-11" />
@@ -760,7 +768,7 @@
       <workItem from="1480455324422" duration="4130000" />
       <workItem from="1480467633195" duration="610000" />
       <workItem from="1480468300901" duration="2498000" />
-      <workItem from="1480549811740" duration="14872000" />
+      <workItem from="1480549811740" duration="15847000" />
     </task>
     <task id="LOCAL-00001" summary="Test Commit">
       <created>1479854485761</created>
@@ -797,11 +805,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480571708022</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Many things have changed. Look at the change log if you want...I am now too lazy to add everything.&#10;&#10;Many accessors and mutators where added.&#10;&#10;Menu item 2 is complete.">
+      <created>1480573583252</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1480573583252</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29163000" />
+    <option name="totallyTimeSpent" value="30138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="0" width="1462" height="1551" extended-state="0" />
@@ -851,7 +866,8 @@
     <MESSAGE value="The driver was reformatted and is ready to accept method calls for a functioning program" />
     <MESSAGE value="Customer Collection Class was added. The ListArrayBasedPlus with Ascendingly Order list sorting algorithm was added.&#10;&#10;The sorting algorithm is functional in Lab 8 but has not been tested in this project&#10;&#10;menu item 1: Complete" />
     <MESSAGE value="A lot of changes for functionality in this revison, however not much progress toward end goal.&#10;&#10;A class was made for the inventory list&#10;&#10;Binary Search was made into a static class, so it could be called by both Customer Collection and InventoryList." />
-    <option name="LAST_COMMIT_MESSAGE" value="A lot of changes for functionality in this revison, however not much progress toward end goal.&#10;&#10;A class was made for the inventory list&#10;&#10;Binary Search was made into a static class, so it could be called by both Customer Collection and InventoryList." />
+    <MESSAGE value="Many things have changed. Look at the change log if you want...I am now too lazy to add everything.&#10;&#10;Many accessors and mutators where added.&#10;&#10;Menu item 2 is complete." />
+    <option name="LAST_COMMIT_MESSAGE" value="Many things have changed. Look at the change log if you want...I am now too lazy to add everything.&#10;&#10;Many accessors and mutators where added.&#10;&#10;Menu item 2 is complete." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -930,8 +946,10 @@
           <folding>
             <element signature="e#573#574#0" expanded="true" />
             <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1020,8 +1038,10 @@
           <folding>
             <element signature="e#573#574#0" expanded="true" />
             <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1094,8 +1114,10 @@
           <folding>
             <element signature="e#573#574#0" expanded="true" />
             <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1176,8 +1198,10 @@
           <folding>
             <element signature="e#573#574#0" expanded="true" />
             <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1235,8 +1259,10 @@
           <folding>
             <element signature="e#573#574#0" expanded="true" />
             <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1294,8 +1320,10 @@
           <folding>
             <element signature="e#573#574#0" expanded="true" />
             <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1419,19 +1447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding>
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BinarySearch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -1445,19 +1460,6 @@
         <state relative-caret-position="132">
           <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CustomerCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="e#159#160#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1488,19 +1490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/InventoryList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#152#153#0" expanded="true" />
-            <element signature="e#215#216#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#481#482#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/InventoryItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1056">
@@ -1516,10 +1505,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CustomerCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="916">
+          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <element signature="e#159#160#0" expanded="true" />
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InventoryList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#152#153#0" expanded="true" />
+            <element signature="e#215#216#0" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+          <folding>
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+        <state relative-caret-position="845">
+          <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
           <folding />
         </state>
       </provider>

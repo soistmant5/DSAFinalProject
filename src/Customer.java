@@ -35,6 +35,10 @@ public class Customer {
         numItems += amount;
     }
 
+    public void removeItems(int amount){
+        numItems -= amount;
+    }
+
     public void incrementTime(){
         time++;
     }
