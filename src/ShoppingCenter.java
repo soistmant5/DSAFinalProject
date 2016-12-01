@@ -10,14 +10,15 @@
 public class ShoppingCenter {
 
     private ListArrayBasedPlus listOfInventoryItems;
-    private ListArrayBasedPlus listOfCustomers;
+    private CustomerCollection custCollection;
     private QueueArrayBased normalCheckout1;
     private QueueArrayBased normalCheckout2;
     private QueueArrayBased expressCheckout;
 
     public ShoppingCenter() {
+
+        custCollection = new CustomerCollection();
         listOfInventoryItems = new ListArrayBasedPlus();
-        listOfCustomers = new ListArrayBasedPlus();
         normalCheckout1 = new QueueArrayBased();
         normalCheckout2 = new QueueArrayBased();
         expressCheckout = new QueueArrayBased();
@@ -28,8 +29,8 @@ public class ShoppingCenter {
     }
 
     public void addShopper(Customer customer) {
-        listOfCustomers.add(0, customer);
-    }
+        custCollection.addShopper(customer);
+
 
     public void addToCheckoutLines(Customer customer) {
         if (customer.getNumItems() <= 5) {
@@ -41,7 +42,7 @@ public class ShoppingCenter {
     }
 
     public ListArrayBasedPlus getListOfCustomers() {
-        return listOfCustomers;
+        return custCollection.getListOfCustomers();
     }
 
     public QueueArrayBased getNormalCheckout1() {
