@@ -199,20 +199,20 @@ public class Driver {
 
     private void printCustomersInLine(){
         System.out.println("The following customers are currently waiting in line to checkout:");
-        if (shoppingCenter.getNormalCheckout1().isEmpty()) {
+        if (shoppingCenter.getCheckOutLines().getNormalCheckout1().isEmpty()) {
             System.out.println("\tLine 1 is currently empty.");
         } else {
-            System.out.println("\tLine 1:\n\t" + shoppingCenter.getNormalCheckout1().toString());
+            System.out.println("\tLine 1:\n\t" + shoppingCenter.getCheckOutLines().getNormalCheckout1().toString());
         }
-        if (shoppingCenter.getNormalCheckout2().isEmpty()) {
+        if (shoppingCenter.getCheckOutLines().getNormalCheckout2().isEmpty()) {
             System.out.println("\tLine 2 is currently empty.");
         } else {
-            System.out.println("\tLine 2:\n\t" + shoppingCenter.getNormalCheckout2().toString());
+            System.out.println("\tLine 2:\n\t" + shoppingCenter.getCheckOutLines().getNormalCheckout2().toString());
         }
-        if (shoppingCenter.getExpressCheckout().isEmpty()) {
+        if (shoppingCenter.getCheckOutLines().getExpressCheckout().isEmpty()) {
             System.out.println("\tThe express line is currently empty.");
         } else {
-            System.out.println("\tExpress line:\n\t" + shoppingCenter.getExpressCheckout().toString());
+            System.out.println("\tExpress line:\n\t" + shoppingCenter.getCheckOutLines().getExpressCheckout().toString());
         }
     }
 
