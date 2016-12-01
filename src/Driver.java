@@ -226,7 +226,15 @@ public class Driver {
     }
 
     private void printRestockingInfo(){
+        System.out.println("Items that need to be Re-Stocked: ");
+    InventoryItem item[] = shoppingCenter.getInventoryList().itemsWithLowStock();
+        for(int i = 0; i < item.length; i++){
+            if(item[i] == null){
 
+            }else{
+                System.out.println(item[i].toString()+ "\n");
+            }
+        }
         //print the stock of the item in the shopping center
     }
 
