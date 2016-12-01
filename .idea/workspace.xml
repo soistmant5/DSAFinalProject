@@ -28,8 +28,8 @@
             <file leaf-file-name="CustomerCollection.java" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/CustomerCollection.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="817">
-                    <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+                  <state relative-caret-position="99">
+                    <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
                     <folding>
                       <element signature="e#159#160#0" expanded="true" />
                       <element signature="e#217#218#0" expanded="true" />
@@ -183,8 +183,8 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="807">
-              <caret line="234" column="55" selection-start-line="234" selection-start-column="55" selection-end-line="234" selection-end-column="55" />
+            <state relative-caret-position="812">
+              <caret line="247" column="34" selection-start-line="247" selection-start-column="34" selection-end-line="247" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -789,7 +789,7 @@
       <workItem from="1480455324422" duration="4130000" />
       <workItem from="1480467633195" duration="610000" />
       <workItem from="1480468300901" duration="2498000" />
-      <workItem from="1480549811740" duration="25592000" />
+      <workItem from="1480549811740" duration="26177000" />
     </task>
     <task id="LOCAL-00001" summary="Test Commit">
       <created>1479854485761</created>
@@ -875,11 +875,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480615388606</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Print restocking info complete&#10;&#10;An array was used to pass inventory items up the class hierarchy, not sure if that is the correct way to implement his method&#10;">
+      <created>1480623805066</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1480623805066</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39883000" />
+    <option name="totallyTimeSpent" value="40468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="0" width="1462" height="1551" extended-state="0" />
@@ -936,7 +943,8 @@
     <MESSAGE value="Printing out the status of each line is complete.&#10;&#10;Is there a more ELEGANT method than calling a subclass multiple times from the driver?" />
     <MESSAGE value="Customer physically checking out is complete&#10;&#10;new methods added." />
     <MESSAGE value="Print restocking info, almost complete&#10;&#10;The way i structured the method and passed the data might not be the best but it will work&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Print restocking info, almost complete&#10;&#10;The way i structured the method and passed the data might not be the best but it will work&#10;" />
+    <MESSAGE value="Print restocking info complete&#10;&#10;An array was used to pass inventory items up the class hierarchy, not sure if that is the correct way to implement his method&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Print restocking info complete&#10;&#10;An array was used to pass inventory items up the class hierarchy, not sure if that is the correct way to implement his method&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1479,21 +1487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CustomerCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="e#159#160#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#827#828#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CheckOutLines.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-376">
@@ -1580,6 +1573,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CustomerCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="e#159#160#0" expanded="true" />
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/InventoryList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="891">
@@ -1590,8 +1598,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="234" column="55" selection-start-line="234" selection-start-column="55" selection-end-line="234" selection-end-column="55" />
+        <state relative-caret-position="812">
+          <caret line="247" column="34" selection-start-line="247" selection-start-column="34" selection-end-line="247" selection-end-column="34" />
           <folding />
         </state>
       </provider>

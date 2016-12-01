@@ -241,10 +241,14 @@ public class Driver {
     private void reOrderItem(){
         System.out.print("Please enter the name of the inventory item you'd like to reorder: ");
         String s = read();
+        InventoryItem item = shoppingCenter.getInventoryList().getInventoryItem(s);
         //search for item return the item itself
         System.out.print("\nNow, enter the quantity of this item you'd like to order: ");
         int stock = Integer.parseInt(read());
+        item.addNumInStock(stock);
+        System.out.println("\n" + stock + " items were added to the stock of " + s);
         // numInStock++
+
     }
 
 
