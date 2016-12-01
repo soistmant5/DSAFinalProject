@@ -182,9 +182,10 @@ public class Driver {
     }
 
     private void customerFinishedShopping(){
-        shoppingCenter.completeShopping();
-        //search for the longest time that one customer has been in the shopping center
+        String name = shoppingCenter.completeShopping();
+        System.out.println("Customer: " + name + " has finished shopping and was ");
 
+        //search for the longest time that one customer has been in the shopping center
         //based on the amount of items, the customers get added to checkout lines
     }
 

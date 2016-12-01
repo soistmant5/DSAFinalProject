@@ -11,17 +11,14 @@ public class ShoppingCenter {
 
     private InventoryList stock;
     private CustomerCollection custCollection;
-    private QueueArrayBased normalCheckout1;
-    private QueueArrayBased normalCheckout2;
-    private QueueArrayBased expressCheckout;
+    private CheckOutLines checkOut;
 
     public ShoppingCenter() {
 
         custCollection = new CustomerCollection();
         stock = new InventoryList();
-        normalCheckout1 = new QueueArrayBased();
-        normalCheckout2 = new QueueArrayBased();
-        expressCheckout = new QueueArrayBased();
+        checkOut = new CheckOutLines();
+
     }
 
 
@@ -42,6 +39,7 @@ public class ShoppingCenter {
         stock.addInventoryItem(item);
     }
 
+    //method might not be necessary
     public ListArrayBasedPlus getListOfInventoryItems() {
         return stock.getListOfInventoryItems();
     }
@@ -50,28 +48,16 @@ public class ShoppingCenter {
         return stock;
     }
 
-    public void addToCheckoutLines(Customer customer) {
-        if (customer.getNumItems() <= 5) {
-
-        }
+    public CheckOutLines getCheckOutLines(){
+        return checkOut;
     }
 
-    public QueueArrayBased getNormalCheckout1() {
-        return normalCheckout1;
-    }
-
-    public QueueArrayBased getNormalCheckout2() {
-        return normalCheckout2;
-    }
-
-    public QueueArrayBased getExpressCheckout() {
-        return expressCheckout;
-    }
-
-    //increments the time that each customer has been in the store by 1
-
-    public void completeShopping(){
-
+    //Adds the customer with the longest shopping time to the proper
+    //Queue and returns the list the customer was added to.
+    public String completeShopping(){
+        Customer c = custCollection.findCustomerLongestTime();
+        c = (Customer) checkOut.addToCheckoutLines(c).peek();
+        return c.getName();
     }
 
 }
