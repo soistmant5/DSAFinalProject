@@ -30,12 +30,24 @@ public class ShoppingCenter {
         custCollection.addShopper(customer);
     }
 
+    public ListArrayBasedPlus getListOfCustomers() {
+        return custCollection.getListOfCustomers();
+    }
+
+    public CustomerCollection getCustCollection(){
+        return custCollection;
+    }
+
     public void addInventoryItem(InventoryItem item) {
         stock.addInventoryItem(item);
     }
 
     public ListArrayBasedPlus getListOfInventoryItems() {
         return stock.getListOfInventoryItems();
+    }
+
+    public InventoryList getInventoryList(){
+        return stock;
     }
 
     public void addToCheckoutLines(Customer customer) {
@@ -45,9 +57,6 @@ public class ShoppingCenter {
     }
 
 
-    public ListArrayBasedPlus getListOfCustomers() {
-        return custCollection.getListOfCustomers();
-    }
 
     public QueueArrayBased getNormalCheckout1() {
         return normalCheckout1;
@@ -62,11 +71,5 @@ public class ShoppingCenter {
     }
 
     //increments the time that each customer has been in the store by 1
-    public void incrementAllTime(){
 
-        for(int i = 0; i < custCollection.getListOfCustomers().numItems; i++){
-            Customer c = (Customer) custCollection.getListOfCustomers().get(i);
-            c.incrementTime();
-        }
-    }
 }

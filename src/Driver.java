@@ -160,15 +160,14 @@ public class Driver {
 
 
         System.out.print("Now, enter the name of the inventory item they are adding: ");
-        String inventoryItem = read();
-
+        InventoryItem item = shoppingCenter.getInventoryList().getInventoryItem(read());
 
         // search for item
         System.out.print("\nEnter the number of items you would like to add to your shopping cart: ");
         int amount = Integer.parseInt(read());
-
+        item.subtractNumInStock(amount);
         c.addItems(amount); //updates the total items the customer has
-        shoppingCenter.incrementAllTime();
+        shoppingCenter.getCustCollection().incrementAllTime();
 
 
     }
