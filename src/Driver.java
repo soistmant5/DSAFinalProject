@@ -11,52 +11,51 @@ import java.io.*;
  */
 public class Driver {
 
-    private static BufferedReader inputData;
+    private static BufferedReader stdin;
     private ShoppingCenter shoppingCenter;
-    private ListArrayBasedPlus listOfShoppers;
-    private ListArrayBasedPlus listOfInventoryItems;
 
     public Driver() {
-        inputData = new BufferedReader(new InputStreamReader(System.in));
+        stdin = new BufferedReader(new InputStreamReader(System.in));
         shoppingCenter = new ShoppingCenter();
-        listOfShoppers = new ListArrayBasedPlus();
-        listOfInventoryItems = new ListArrayBasedPlus();
+
+        runMenuFunctions();
     }
 
     private String read() {
-
         String input = null;
+
         try {
-            input = inputData.readLine();
+            input = stdin.readLine();
             System.out.println(input);
         } catch (Exception e) {
-            System.out.println("System In Error");
+            System.out.println("Error reading input.");
         }
+
         return input;
     }
 
     private void initializeInventory() {
         System.out.println("Welcome to the Soistmann-Messner Shopping Center!");
-        System.out.print("To begin, enter the number of different types" +
-                " of items the store has in stock: ");
+        System.out.print("To begin, enter the number of different types of items the store has in stock: ");
         int inventoryNum = Integer.parseInt(read());
 
         for (int i = 1; i <= inventoryNum; i++) {
             System.out.print("\nEnter inventory item " + i + ": ");
             String itemName = read();
+
             System.out.print("\nNow, enter the number of this item that are currently in stock: ");
             int quantity = Integer.parseInt(read());
+
             System.out.print("\nFinally, enter the minimum quantity of stock of this item the store must have: ");
             int minQuantity = Integer.parseInt(read());
-            System.out.println("");
+
             InventoryItem item = new InventoryItem(itemName, quantity, minQuantity);
             shoppingCenter.addInventoryItem(item);
         }
 
-
+        System.out.println("");
         System.out.println("The store is now ready to open up for the day.");
-        System.out.println("The inventory you are beginning the day with is:\n\t" + shoppingCenter.getListOfInventoryItems().toString());
-
+        System.out.println("The inventory you are beginning the day with is:\n\t" + shoppingCenter.getInventoryList().getListOfInventoryItems().toString());
     }
 
     private void printMenuOptions() {
@@ -74,31 +73,29 @@ public class Driver {
         System.out.println("\t10. Close the Shopping Center.");
     }
 
-    public void masterMenu() {
-
+    public void runMenuFunctions() {
         initializeInventory();
-
         boolean exit = false;
 
         do {
             try {
                 printMenuOptions();
 
-                System.out.print("Menu Selection: ");
+                System.out.print("Make your menu selection now: ");
                 int select = Integer.parseInt(read());
                 System.out.println("");
-                switch (select) {
 
+                switch (select) {
                     case 1:
                         customerEnters();
                         break;
 
                     case 2:
-                        customerShopping();
+                        customerAddsItem();
                         break;
 
                     case 3:
-                        customerRemoveItem();
+                        customerRemovesItem();
                         break;
 
                     case 4:
@@ -106,19 +103,19 @@ public class Driver {
                         break;
 
                     case 5:
-                        customerChecksOut();
+                        customerFinishedShopping();
                         break;
 
                     case 6:
-                        printShoppingCustomers();
+                        printShoppingCustomers(shoppingCenter.getCustomerList().getListOfCustomers());
                         break;
 
                     case 7:
-                        printCustomersInLine();
+                        printCustomersInLine(shoppingCenter.getCheckOutLines());
                         break;
 
                     case 8:
-                        printRestockingInfo();
+                        printRestockingInfo(shoppingCenter.getInventoryList().getListOfInventoryItems());
                         break;
 
                     case 9:
@@ -126,130 +123,161 @@ public class Driver {
                         break;
 
                     case 10:
-                        System.out.println("System Closing");
-                        System.out.println("");
+                        System.out.println("You have successfully quit the program.");
                         exit = true;
                         break;
-
                 }
-
-
             } catch (Exception e) {
                 System.out.println("General Error\n");
-
             }
         } while (!exit);
         System.exit(0);
-
     }
 
-    private void customerEnters(){
+    private void customerEnters() {
         System.out.print("Please enter the name of the customer entering the store: ");
         Customer shopper = new Customer(read());
         System.out.println("");
         shoppingCenter.addShopper(shopper);
     }
 
-    private void customerShopping(){
-        System.out.print("Please enter the name of the customer who is adding to their cart: ");
-        Customer c = shoppingCenter.getCustCollection().getPosOfCustomer(read());
+    private void customerAddsItem() {
+        System.out.print("Please enter the name of the customer who is adding an item to their cart: ");
+        Customer customer = shoppingCenter.getCustomerList().getCustomerWithKey(read());
         //Customer c = getCustomer(); //method call that searches for a customer and returns a shopper
 
+        System.out.println("\nCurrent list of Inventory Items: ");
+        shoppingCenter.getInventoryList().toString(); //prints out list of inventory items
 
-        System.out.println("\n\n List of Inventory Items: ");
-        shoppingCenter.getListOfInventoryItems().toString(); //prints out list of inventory items
-
-
-        System.out.print("Now, enter the name of the inventory item they are adding: ");
+        System.out.print("Now, enter the name of the inventory item the customer is putting in their cart: ");
         InventoryItem item = shoppingCenter.getInventoryList().getInventoryItem(read());
 
-        // search for item
-        System.out.print("\nEnter the number of items you would like to add to your shopping cart: ");
-        int amount = Integer.parseInt(read());
-        item.subtractNumInStock(amount);
-        c.addItems(amount); //updates the total items the customer has
-        shoppingCenter.getCustCollection().incrementAllTime();
-
-
+        item.subtractNumInStock();
+        customer.addItem(); //updates the total items the customer has
+        shoppingCenter.getCustomerList().incrementAllTime();
     }
 
-    private void customerRemoveItem(){
-        Customer c = shoppingCenter.getCustCollection().getPosOfCustomer(read());
-        System.out.print("Enter the number of items to remove from cart: ");
-        c.removeItems(Integer.parseInt(read()));
-        System.out.println("");
+    private void customerRemovesItem() {
+        System.out.println("Please enter the name of the customer who is removing an item from their cart:");
+        Customer customer = shoppingCenter.getCustomerList().getCustomerWithKey(read());
+        customer.removeItem();
         //decrease the items in the customers shopping cart by the number of items they want to remove.
     }
 
-    private void customerFinishedShopping(){
-        String name = shoppingCenter.completeShopping();
-        System.out.println("Customer: " + name + " has finished shopping and was ");
+    private void customerFinishedShopping() {
+        Customer customer = shoppingCenter.getCustomerList().getCustomerWithLongestTime();
 
+        if (customer.getNumItems() == 0) {
+            System.out.println(customer.getName() + " has been in the store the longest, but still has an empty cart.");
+            System.out.print("Would you like to let them continue shopping? (Y/N): ");
+            String response = read();
+
+            if (response.equals("Y")) {
+                customer.resetTime();
+                System.out.println("\nThe customer will remain in the store.");
+            } else if (response.equals("N")) {
+                shoppingCenter.getCustomerList().deleteCustomer(customer);
+                System.out.println("The customer has left the store.");
+            }
+
+        } else {
+            shoppingCenter.addCustomerToCheckOutLines(customer);
+        }
         //search for the longest time that one customer has been in the shopping center
         //based on the amount of items, the customers get added to checkout lines
     }
 
-    private void customerChecksOut(){
+   /* private void customerChecksOut() {
         System.out.print("Would you like to continue Shopping");
         String answer = read();
-        Customer c = shoppingCenter.checkOut(answer);
-        if(answer.equals("Yes")){
-            System.out.println("\n Customer: " + c.getName() + " has decided to continue Shopping");
-        }else{
-            System.out.println("Customer: " + c.getName() + " has " +
-                    "finished Shopping and has left the building");
+        Customer customer = shoppingCenter.checkOut(answer);
+
+        if (answer.equals("Y")) {
+            System.out.println("\n Customer: " + customer.getName() + " has decided to continue Shopping");
+        } else {
+            System.out.println("The customer '" + customer.getName() + "' has checked out and has left the store.");
         }
         //customers get the choice to return shopping
+    } */
+
+    private void printShoppingCustomers(ListArrayBasedPlus customerList) {
+        if (customerList.isEmpty()) {
+            System.out.println("There are currently no customers in the store.");
+        } else {
+            System.out.println("There are currently " + customerList.size() + " customers shopping:");
+            System.out.println("\t" + customerList.toString());
+        }
     }
 
-    private void printShoppingCustomers(){
-        System.out.println("The customers currently shopping are:\n\t" + shoppingCenter.getListOfCustomers().toString());
-    }
+    private void printCustomersInLine(CheckOutLines checkOutLines) {
+        QueueArrayBased normalCheckout1 = checkOutLines.getNormalCheckout1();
+        QueueArrayBased normalCheckout2 = checkOutLines.getNormalCheckout1();
+        QueueArrayBased expressCheckout = checkOutLines.getNormalCheckout1();
 
-    private void printCustomersInLine(){
         System.out.println("The following customers are currently waiting in line to checkout:");
-        if (shoppingCenter.getCheckOutLines().getNormalCheckout1().isEmpty()) {
+
+        if (normalCheckout1.isEmpty()) {
             System.out.println("\tLine 1 is currently empty.");
         } else {
-            System.out.println("\tLine 1:\n\t" + shoppingCenter.getCheckOutLines().getNormalCheckout1().toString());
+            System.out.println("\tLine 1:\n\t" + normalCheckout1.toString());
         }
-        if (shoppingCenter.getCheckOutLines().getNormalCheckout2().isEmpty()) {
+
+        if (normalCheckout2.isEmpty()) {
             System.out.println("\tLine 2 is currently empty.");
         } else {
-            System.out.println("\tLine 2:\n\t" + shoppingCenter.getCheckOutLines().getNormalCheckout2().toString());
+            System.out.println("\tLine 2:\n\t" + normalCheckout2.toString());
         }
-        if (shoppingCenter.getCheckOutLines().getExpressCheckout().isEmpty()) {
-            System.out.println("\tThe express line is currently empty.");
+
+        if (expressCheckout.isEmpty()) {
+            System.out.println("\tExpress line is currently empty.");
         } else {
-            System.out.println("\tExpress line:\n\t" + shoppingCenter.getCheckOutLines().getExpressCheckout().toString());
+            System.out.println("\tExpress line:\n\t" + expressCheckout.toString());
         }
     }
 
-    private void printRestockingInfo(){
-        System.out.println("Items that need to be Re-Stocked: ");
-    InventoryItem item[] = shoppingCenter.getInventoryList().itemsWithLowStock();
-        for(int i = 0; i < item.length; i++){
-            if(item[i] == null){
+    private void printRestockingInfo(ListArrayBasedPlus inventoryList) {
+        System.out.println("The following items are currently at or below the restocking level:");
+        //System.out.println("\t" + inventoryList.getItemsWithLowStock());
 
-            }else{
+        String result = null;
+        for (int i= 0; i < inventoryList.size(); i++) {
+            InventoryItem item = (InventoryItem) inventoryList.get(i);
+
+            if (item.hasLowStock()) {
+                result += "\t" + item.getName();
+            }
+        }
+
+        if (result == null) {
+            System.out.println("There currently no items that are at or below their respective restocking level.");
+        } else {
+            System.out.println(result);
+        }
+
+        /*System.out.println("Items that need to be Re-Stocked: ");
+        InventoryItem item[] = shoppingCenter.getInventoryList().itemsWithLowStock();
+
+        for (int i = 0; i < item.length; i++) {
+            if (item[i] == null) {
+
+            } else {
                 System.out.println(item[i].toString()+ "\n");
             }
         }
-        //print the stock of the item in the shopping center
+        //print the stock of the item in the shopping center */
     }
 
+    /**
+     *
+     */
     private void reOrderItem(){
-        System.out.print("Please enter the name of the inventory item you'd like to reorder: ");
+        System.out.print("Please enter the name of the inventory item you'd like to order stock of: ");
         String s = read();
         InventoryItem item = shoppingCenter.getInventoryList().getInventoryItem(s);
         //search for item return the item itself
         System.out.print("\nNow, enter the quantity of this item you'd like to order: ");
-        int stock = Integer.parseInt(read());
-        item.addNumInStock(stock);
-        System.out.println("\n" + stock + " items were added to the stock of " + s);
-        // numInStock++
-
+        int quantity = Integer.parseInt(read());
+        item.restock(quantity);
+        System.out.println("\nItem " + s + " was restocked by " + quantity + " units.");
     }
-
-
 }

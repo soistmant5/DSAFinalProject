@@ -1,11 +1,17 @@
 /**
- * Created by Joseph on 12/1/2016.
+ * Purpose: DSA Final Project
+ * Status:
+ * Last Updated:
+ * Submitted:
+ * @author Tom Soistmann
+ * @author Joseph Messner
+ * @version 2016.11.30
  */
 public class CheckOutLines {
+
     private QueueArrayBased normalCheckout1;
     private QueueArrayBased normalCheckout2;
     private QueueArrayBased expressCheckout;
-    private static final int  expressCheckOutLimit = 0;
     private int checkOutOrderCount = 0;
 
     public CheckOutLines(){
@@ -27,56 +33,55 @@ public class CheckOutLines {
     }
 
     public QueueArrayBased addToCheckoutLines(Customer customer) {
-        QueueArrayBased currentQueue = lengthRegularLines();
-        if(customer.getNumItems() <= expressCheckOutLimit){
+        QueueArrayBased shortestNormalCheckout = compareNormalCheckoutLines();
+
+        if (customer.getNumItems() <= 5) {
             //if customer has less than five items EXPRESS LINE
-            if(expressCheckout.count >= currentQueue.count){
+            if (expressCheckout.count >= shortestNormalCheckout.count) {
                 //add express customer (less than five items) to normal QUEUES
-
-                currentQueue.enqueue(customer);
-
-            }else{
+                shortestNormalCheckout.enqueue(customer);
+            } else {
                 //add to express line
                 expressCheckout.enqueue(customer);
                 return expressCheckout;
                 //return "Express CheckOut Line";
             }
-        }else{
+        } else {
             //add to shortest
-            currentQueue.enqueue(customer);
+            shortestNormalCheckout.enqueue(customer);
         }
-        return currentQueue;
-       //return "Normal CheckOutLine";
+
+        return shortestNormalCheckout;
     }
 
-    private QueueArrayBased lengthRegularLines(){
-        int normal1 = normalCheckout1.count;
-        int normal2 = normalCheckout2.count;
-        if(normal1 < normal2){
+    private QueueArrayBased compareNormalCheckoutLines() {
+        if (normalCheckout1.count < normalCheckout2.count) {
             return normalCheckout1;
-        }else{
+        } else {
             return normalCheckout2;
         }
     }
 
-    public QueueArrayBased orderOfCheckout(){
-        QueueArrayBased q = null;
+    public QueueArrayBased orderOfCheckout() {
+        QueueArrayBased queue = null;
+
         switch(checkOutOrderCount){
             case 0:
-                q = normalCheckout1;
+                queue = normalCheckout1;
                 break;
 
             case 1:
-                q = normalCheckout2;
+                queue = normalCheckout2;
                 break;
 
             case 2:
-                q = expressCheckout;
+                queue = expressCheckout;
                 checkOutOrderCount = -1;
                 break;
 
         }
+
         checkOutOrderCount++;
-        return q;
+        return queue;
     }
 }

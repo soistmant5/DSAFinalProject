@@ -10,67 +10,43 @@
 public class ShoppingCenter {
 
     private InventoryList stock;
-    private CustomerCollection custCollection;
+    private CustomerList customerList;
     private CheckOutLines checkOut;
 
     public ShoppingCenter() {
-
-        custCollection = new CustomerCollection();
+        customerList = new CustomerList();
         stock = new InventoryList();
         checkOut = new CheckOutLines();
-
     }
-
-
 
     public void addShopper(Customer customer) {
-        custCollection.addShopper(customer);
+        customerList.addCustomer(customer);
     }
 
-    public ListArrayBasedPlus getListOfCustomers() {
-        return custCollection.getListOfCustomers();
-    }
-
-    public CustomerCollection getCustCollection(){
-        return custCollection;
+    public CustomerList getCustomerList() {
+        return customerList;
     }
 
     public void addInventoryItem(InventoryItem item) {
         stock.addInventoryItem(item);
     }
 
-    //method might not be necessary
-    public ListArrayBasedPlus getListOfInventoryItems() {
-        return stock.getListOfInventoryItems();
-    }
-
-    public InventoryList getInventoryList(){
+    public InventoryList getInventoryList() {
         return stock;
     }
 
-    public CheckOutLines getCheckOutLines(){
+    public CheckOutLines getCheckOutLines() {
         return checkOut;
     }
 
     //Adds the customer with the longest shopping time to the proper
     //Queue and returns the list the customer was added to.
-    public String completeShopping(){
-        Customer c = custCollection.findCustomerLongestTime();
-        return addCustomerToCheckOutLines(c).getName();
+
+    public void addCustomerToCheckOutLines(Customer customer) {
+        checkOut.addToCheckoutLines(customer);
     }
 
-    private Customer addCustomerToCheckOutLines(Customer c){
-        return (Customer) checkOut.addToCheckoutLines(c).peek();
+    public Customer checkOut() {
+        return (Customer) checkOut.orderOfCheckout().dequeue();
     }
-
-    public Customer checkOut(String answer){
-        Customer c = (Customer) checkOut.orderOfCheckout().dequeue();
-        if(answer.equals("Yes")){
-            return addCustomerToCheckOutLines(c);
-        }
-        else{
-            return c;
-        }
-    }
-
 }

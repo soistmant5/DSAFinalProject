@@ -31,19 +31,23 @@ public class Customer {
         return time;
     }
 
-    public void addItems(int amount){
-        numItems += amount;
+    public void addItem() {
+        numItems++;
     }
 
-    public void removeItems(int amount){
-        numItems -= amount;
+    public void removeItem() {
+        numItems--;
     }
 
-    public void incrementTime(){
+    public void incrementTime() {
         time++;
     }
 
+    public void resetTime() {
+        time = 0;
+    }
+
     public String toString() {
-        return "Customer name: " + name + "; Items in cart: " + numItems + "; Time spent in store: " + time + " minutes.\n\t";
+        return "Customer name: " + name + "\tItems in cart: " + numItems + "\tTime spent in store: " + time + " minutes.\n\t";
     }
 }

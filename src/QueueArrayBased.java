@@ -73,10 +73,18 @@ public class QueueArrayBased<T> implements QueueInterface<T> {
     public String toString() {
         String result = "";
         int index = front;
-        for (int i = 0; i < queue.length ; i++) {
+        int i = 0;
+
+        while (i < queue.length && queue[index % queue.length] != null) {
             result += (queue[index % queue.length] + "  ");
+            i++;
             index++;
         }
+
+        /*for (int i = 0; i < queue.length ; i++) {
+            result += (queue[index % queue.length] + "  ");
+            index++;
+        } */
         return result;
     }
 }

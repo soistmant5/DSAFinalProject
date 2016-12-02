@@ -23,31 +23,19 @@ public class InventoryItem {
         return name;
     }
 
-    public int getNumInStock() {
-        return numInStock;
+    public void subtractNumInStock() {
+        numInStock --;
     }
 
-    public int getMinStock() {
-        return minStock;
+    public void restock(int quantity) {
+        numInStock += quantity;
+    }
+
+    public boolean hasLowStock() {
+        return numInStock <= minStock;
     }
 
     public String toString() {
-        return "Item name: " + name + "; Current Stock: " + numInStock+ "\n\t";
-    }
-
-    public void subtractNumInStock(int stock){
-        numInStock -= stock;
-    }
-
-    public void addNumInStock(int stock){
-        numInStock += stock;
-    }
-
-    public boolean lowStock(){
-        if(numInStock <= minStock){
-            return true;
-        }else{
-            return false;
-        }
+        return "Item name: " + name + "; Current Stock: " + numInStock + "\n\t";
     }
 }
