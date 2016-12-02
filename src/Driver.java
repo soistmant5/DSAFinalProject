@@ -46,7 +46,7 @@ public class Driver {
             String itemName = read();
             System.out.print("\nNow, enter the number of this item that are currently in stock: ");
             int quantity = Integer.parseInt(read());
-            System.out.print("\nFinally, enter the minimum quantity of stock of this item the store must have: \n");
+            System.out.print("\nFinally, enter the minimum quantity of stock of this item the store must have: ");
             int minQuantity = Integer.parseInt(read());
             System.out.println("");
             InventoryItem item = new InventoryItem(itemName, quantity, minQuantity);

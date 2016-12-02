@@ -44,6 +44,6 @@ public class Customer {
     }
 
     public String toString() {
-        return "Customer name: " + name + "; Items in cart: " + numItems + "; Time spent in store: " + time + " minutes.";
+        return "Customer name: " + name + "; Items in cart: " + numItems + "; Time spent in store: " + time + " minutes.\n\t";
     }
 }

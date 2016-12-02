@@ -32,7 +32,7 @@ public class InventoryItem {
     }
 
     public String toString() {
-        return "Item name: " + name + "; Current Stock: " + numInStock;
+        return "Item name: " + name + "; Current Stock: " + numInStock+ "\n\t";
     }
 
     public void subtractNumInStock(int stock){
