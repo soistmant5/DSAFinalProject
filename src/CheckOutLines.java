@@ -12,12 +12,13 @@ public class CheckOutLines {
     private QueueArrayBased normalCheckout1;
     private QueueArrayBased normalCheckout2;
     private QueueArrayBased expressCheckout;
-    private int checkOutOrderCount = 0;
+    private int checkOutOrderCount;
 
     public CheckOutLines(){
         normalCheckout1 = new QueueArrayBased();
         normalCheckout2 = new QueueArrayBased();
         expressCheckout = new QueueArrayBased();
+        checkOutOrderCount = 0;
     }
 
     public QueueArrayBased getNormalCheckout1() {
@@ -32,30 +33,19 @@ public class CheckOutLines {
         return expressCheckout;
     }
 
-    public QueueArrayBased addToCheckoutLines(Customer customer) {
+    public void addToCheckoutLines(Customer customer) {
         QueueArrayBased shortestNormalCheckout = compareNormalCheckoutLines();
 
-        if (customer.getNumItems() <= 5) {
-            //if customer has less than five items EXPRESS LINE
-            if (expressCheckout.count >= shortestNormalCheckout.count) {
-                //add express customer (less than five items) to normal QUEUES
-                shortestNormalCheckout.enqueue(customer);
-            } else {
-                //add to express line
-                expressCheckout.enqueue(customer);
-                return expressCheckout;
-                //return "Express CheckOut Line";
-            }
+        if ((customer.getNumItems() <= 5) && (expressCheckout.count <= shortestNormalCheckout.count)) {
+            expressCheckout.enqueue(customer);
         } else {
             //add to shortest
             shortestNormalCheckout.enqueue(customer);
         }
-
-        return shortestNormalCheckout;
     }
 
     private QueueArrayBased compareNormalCheckoutLines() {
-        if (normalCheckout1.count < normalCheckout2.count) {
+        if (normalCheckout1.count <= normalCheckout2.count) {
             return normalCheckout1;
         } else {
             return normalCheckout2;
@@ -65,20 +55,21 @@ public class CheckOutLines {
     public QueueArrayBased orderOfCheckout() {
         QueueArrayBased queue = null;
 
-        switch(checkOutOrderCount){
+        switch(checkOutOrderCount) {
             case 0:
-                queue = normalCheckout1;
+                if (normalCheckout1.count > 0) {
+                    queue = normalCheckout1;
+                }
                 break;
-
             case 1:
-                queue = normalCheckout2;
+                if (normalCheckout2.count > 0) {
+                    queue = normalCheckout2;
+                }
                 break;
-
             case 2:
                 queue = expressCheckout;
                 checkOutOrderCount = -1;
                 break;
-
         }
 
         checkOutOrderCount++;

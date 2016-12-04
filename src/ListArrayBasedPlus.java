@@ -40,12 +40,10 @@ public class ListArrayBasedPlus extends ListArrayBased {
         int i = 0;
 
         while (i < items.length && items[i] != null) {
-            result += items[i] + "  ";
+            result += items[i];
             i++;
         }
-        /* for (int i = 0; i < items.length; i++) {
-            result += (" " + items[i]);
-        } */
+
         return result;
     }
 

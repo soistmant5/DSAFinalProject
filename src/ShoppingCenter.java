@@ -19,7 +19,7 @@ public class ShoppingCenter {
         checkOut = new CheckOutLines();
     }
 
-    public void addShopper(Customer customer) {
+    public void addCustomer(Customer customer) {
         customerList.addCustomer(customer);
     }
 
@@ -43,10 +43,12 @@ public class ShoppingCenter {
     //Queue and returns the list the customer was added to.
 
     public void addCustomerToCheckOutLines(Customer customer) {
+        customerList.deleteCustomer(customer);
         checkOut.addToCheckoutLines(customer);
     }
 
-    public Customer checkOut() {
-        return (Customer) checkOut.orderOfCheckout().dequeue();
+    public Customer customerLeavesStore() {
+        QueueArrayBased queueToDequeue = checkOut.orderOfCheckout();
+        return (Customer) queueToDequeue.dequeue();
     }
 }

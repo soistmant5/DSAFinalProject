@@ -23,8 +23,16 @@ public class InventoryItem {
         return name;
     }
 
+    public int getNumInStock() {
+        return numInStock;
+    }
+
+    public int getMinStock() {
+        return minStock;
+    }
+
     public void subtractNumInStock() {
-        numInStock --;
+        numInStock--;
     }
 
     public void restock(int quantity) {
@@ -36,6 +44,6 @@ public class InventoryItem {
     }
 
     public String toString() {
-        return "Item name: " + name + "; Current Stock: " + numInStock + "\n\t";
+        return String.format("%-25s %-25s %-20s", "\tItem name: " + name, "Quantity in stock: " + numInStock, "Required stock: " + minStock + "\n");
     }
 }

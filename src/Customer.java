@@ -48,6 +48,6 @@ public class Customer {
     }
 
     public String toString() {
-        return "Customer name: " + name + "\tItems in cart: " + numItems + "\tTime spent in store: " + time + " minutes.\n\t";
+        return String.format("%-30s %-20s %-20s", "\tCustomer name: " + name, "Items in cart: " + numItems, "Time spent in store: " + time + " minutes.\n");
     }
 }

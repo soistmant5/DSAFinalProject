@@ -29,19 +29,6 @@ public class InventoryList {
         return (InventoryItem) listOfInventoryItems.get(index);
     }
 
-    public String getItemsWithLowStock() {
-        String result = "";
-        for (int i = 0; i < listOfInventoryItems.size(); i++) {
-            InventoryItem item = (InventoryItem) listOfInventoryItems.get(i);
-
-            if (item.hasLowStock()) {
-                result += item.getName() + "  ";
-            }
-        }
-
-        return result;
-    }
-
     public int binarySearch(String key) {
         int high = listOfInventoryItems.size();
         int low = 0;
@@ -55,23 +42,13 @@ public class InventoryList {
                 return mid;
             } else if (result < 0) {
                 high = mid;
-                mid = (high + low)/2;
+                mid = (high + low) / 2;
             } else {
                 low = mid + 1;
-                mid = (low + high)/2;
+                mid = (low + high) / 2;
             }
         }
 
         return low;
-    }
-
-    public String toString() {
-        String result = "";
-
-        for (int i = 0; i < listOfInventoryItems.size(); i++) {
-            result += listOfInventoryItems.get(i).toString() + "\n";
-        }
-
-        return result;
     }
 }

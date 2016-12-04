@@ -76,7 +76,7 @@ public class QueueArrayBased<T> implements QueueInterface<T> {
         int i = 0;
 
         while (i < queue.length && queue[index % queue.length] != null) {
-            result += (queue[index % queue.length] + "  ");
+            result += (queue[index % queue.length]);
             i++;
             index++;
         }
