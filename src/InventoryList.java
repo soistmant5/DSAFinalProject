@@ -10,13 +10,14 @@
 public class InventoryList {
 
     private ListArrayBasedPlus listOfInventoryItems;
+    private int restockingAmount;
 
     public InventoryList() {
         listOfInventoryItems = new ListArrayBasedPlus();
     }
 
     public void addInventoryItem(InventoryItem item) {
-        int index = binarySearch(item.getName());
+        int index = binarySearch(item.getName(), false);
         listOfInventoryItems.add(index, item);
     }
 
@@ -24,12 +25,12 @@ public class InventoryList {
         return listOfInventoryItems;
     }
 
-    public InventoryItem getInventoryItem(String key) {
-        int index = binarySearch(key);
+    public InventoryItem searchForInventoryItem(String key) {
+        int index = binarySearch(key, true);
         return (InventoryItem) listOfInventoryItems.get(index);
     }
 
-    public int binarySearch(String key) {
+    public int binarySearch(String key, boolean search) {
         int high = listOfInventoryItems.size();
         int low = 0;
         int mid = (high) / 2;
@@ -47,6 +48,10 @@ public class InventoryList {
                 low = mid + 1;
                 mid = (low + high) / 2;
             }
+        }
+
+        if(search){
+            return -1;
         }
 
         return low;

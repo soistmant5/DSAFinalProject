@@ -12,23 +12,17 @@ public class ShoppingCenter {
     private InventoryList stock;
     private CustomerList customerList;
     private CheckOutLines checkOut;
+    private int restockingAmount;
 
-    public ShoppingCenter() {
+    public ShoppingCenter(int reStockingAmount) {
         customerList = new CustomerList();
         stock = new InventoryList();
         checkOut = new CheckOutLines();
-    }
-
-    public void addCustomer(Customer customer) {
-        customerList.addCustomer(customer);
+        this.restockingAmount = reStockingAmount;
     }
 
     public CustomerList getCustomerList() {
         return customerList;
-    }
-
-    public void addInventoryItem(InventoryItem item) {
-        stock.addInventoryItem(item);
     }
 
     public InventoryList getInventoryList() {
@@ -37,6 +31,18 @@ public class ShoppingCenter {
 
     public CheckOutLines getCheckOutLines() {
         return checkOut;
+    }
+
+    public int getRestockingAmount() {
+        return restockingAmount;
+    }
+
+    public void addCustomer(Customer customer) {
+        customerList.addCustomer(customer);
+    }
+
+    public void addInventoryItem(InventoryItem item) {
+        stock.addInventoryItem(item);
     }
 
     //Adds the customer with the longest shopping time to the proper
@@ -49,6 +55,18 @@ public class ShoppingCenter {
 
     public Customer customerLeavesStore() {
         QueueArrayBased queueToDequeue = checkOut.orderOfCheckout();
+
+        if (queueToDequeue == null) {
+            return null;
+        }
         return (Customer) queueToDequeue.dequeue();
+    }
+
+    public boolean hasLowStock(InventoryItem item) {
+        return item.getNumInStock() <= restockingAmount;
+    }
+
+    public String printInventoryList() {
+        return stock.getListOfInventoryItems().toString();
     }
 }

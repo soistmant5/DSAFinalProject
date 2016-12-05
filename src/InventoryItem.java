@@ -11,12 +11,10 @@ public class InventoryItem {
 
     private String name;
     private int numInStock;
-    private int minStock;
 
-    public InventoryItem(String name, int currentStock, int requiredStock) {
+    public InventoryItem(String name, int currentStock) {
         this.name = name;
         numInStock = currentStock;
-        minStock = requiredStock;
     }
 
     public String getName() {
@@ -27,10 +25,6 @@ public class InventoryItem {
         return numInStock;
     }
 
-    public int getMinStock() {
-        return minStock;
-    }
-
     public void subtractNumInStock() {
         numInStock--;
     }
@@ -39,11 +33,7 @@ public class InventoryItem {
         numInStock += quantity;
     }
 
-    public boolean hasLowStock() {
-        return numInStock <= minStock;
-    }
-
     public String toString() {
-        return String.format("%-25s %-25s %-20s", "\tItem name: " + name, "Quantity in stock: " + numInStock, "Required stock: " + minStock + "\n");
+        return String.format("%-20s %-20s", "\tItem name: " + name, "Quantity in stock: " + numInStock + "\n");
     }
 }

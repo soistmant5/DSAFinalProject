@@ -9,35 +9,36 @@
  */
 public class CheckOutLines {
 
-    private QueueArrayBased normalCheckout1;
-    private QueueArrayBased normalCheckout2;
-    private QueueArrayBased expressCheckout;
+    private QueueArrayBased regular1;
+    private QueueArrayBased regular2;
+    private QueueArrayBased express;
     private int checkOutOrderCount;
 
-    public CheckOutLines(){
-        normalCheckout1 = new QueueArrayBased();
-        normalCheckout2 = new QueueArrayBased();
-        expressCheckout = new QueueArrayBased();
+
+    public CheckOutLines() {
+        regular1 = new QueueArrayBased();
+        regular2 = new QueueArrayBased();
+        express = new QueueArrayBased();
         checkOutOrderCount = 0;
     }
 
     public QueueArrayBased getNormalCheckout1() {
-        return normalCheckout1;
+        return regular1;
     }
 
     public QueueArrayBased getNormalCheckout2() {
-        return normalCheckout2;
+        return regular2;
     }
 
     public QueueArrayBased getExpressCheckout() {
-        return expressCheckout;
+        return express;
     }
 
     public void addToCheckoutLines(Customer customer) {
         QueueArrayBased shortestNormalCheckout = compareNormalCheckoutLines();
 
-        if ((customer.getNumItems() <= 5) && (expressCheckout.count <= shortestNormalCheckout.count)) {
-            expressCheckout.enqueue(customer);
+        if ((customer.getNumItems() <= 4) && (express.count <= shortestNormalCheckout.count)) {
+            express.enqueue(customer);
         } else {
             //add to shortest
             shortestNormalCheckout.enqueue(customer);
@@ -45,34 +46,56 @@ public class CheckOutLines {
     }
 
     private QueueArrayBased compareNormalCheckoutLines() {
-        if (normalCheckout1.count <= normalCheckout2.count) {
-            return normalCheckout1;
+        if (regular1.count <= regular2.count) {
+            return regular1;
         } else {
-            return normalCheckout2;
+            return regular2;
+        }
+    }
+
+    public void checkOutStart(String register) {
+        switch(register) {
+            case "regular1":
+                checkOutOrderCount = 1;
+                break;
+            case "regular2":
+                checkOutOrderCount = 2;
+                break;
         }
     }
 
     public QueueArrayBased orderOfCheckout() {
-        QueueArrayBased queue = null;
+        QueueArrayBased queueToDequeue = null;
+        boolean inserted = false;
 
-        switch(checkOutOrderCount) {
-            case 0:
-                if (normalCheckout1.count > 0) {
-                    queue = normalCheckout1;
-                }
-                break;
-            case 1:
-                if (normalCheckout2.count > 0) {
-                    queue = normalCheckout2;
-                }
-                break;
-            case 2:
-                queue = expressCheckout;
-                checkOutOrderCount = -1;
-                break;
+        while (checkOutOrderCount < 3 && !inserted) {
+            switch (checkOutOrderCount) {
+                case 0:
+                    if (express.count > 0) {
+                        inserted = true;
+                        queueToDequeue = express;
+                    }
+                    break;
+                case 1:
+                    if (regular1.count > 0) {
+                        inserted = true;
+                        queueToDequeue = regular1;
+                    }
+                    break;
+                case 2:
+                    if (regular2.count > 0) {
+                        inserted = true;
+                        queueToDequeue = regular2;
+                    }
+                    break;
+            }
+            checkOutOrderCount++;
         }
 
-        checkOutOrderCount++;
-        return queue;
+        if (checkOutOrderCount > 2) {
+            checkOutOrderCount = 0;
+        }
+
+        return queueToDequeue;
     }
 }
