@@ -37,14 +37,6 @@ public class ShoppingCenter {
         return restockingAmount;
     }
 
-    public void addCustomer(Customer customer) {
-        customerList.addCustomer(customer);
-    }
-
-    public void addInventoryItem(InventoryItem item) {
-        stock.addInventoryItem(item);
-    }
-
     //Adds the customer with the longest shopping time to the proper
     //Queue and returns the list the customer was added to.
 
@@ -53,13 +45,13 @@ public class ShoppingCenter {
         checkOut.addToCheckoutLines(customer);
     }
 
-    public Customer customerLeavesStore() {
+    public QueueArrayBased findNextQueueToDequeue() {
         QueueArrayBased queueToDequeue = checkOut.orderOfCheckout();
 
         if (queueToDequeue == null) {
             return null;
         }
-        return (Customer) queueToDequeue.dequeue();
+        return queueToDequeue;
     }
 
     public boolean hasLowStock(InventoryItem item) {
