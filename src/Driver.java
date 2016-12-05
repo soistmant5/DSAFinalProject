@@ -170,7 +170,7 @@ public class Driver {
     }
 
     private void customerFinishedShopping(CustomerList customerList) {
-        Customer customer = customerList.getCustomerWithLongestTime();
+        Customer customer = customerList.getCustomerWithKey("Tom");
 
         if (customer.getNumItems() == 0) {
             System.out.println(customer.getName() + " has been in the store the longest, but still has an empty cart.");
