@@ -1,24 +1,21 @@
 /**
  * Purpose: DSA Final Project
- * Status:
- * Last Updated:
- * Submitted:
+ * Status: Complete and thoroughly tested
+ * Last Updated: 12/06/2016
+ * Submitted: 12/06/2016
  * @author Tom Soistmann
  * @author Joseph Messner
- * @version 2016.11.22
+ * @version 2016.12.06
  */
 public class Main {
 
+    /**
+     * Main method for the project.
+     * Instantiates the Driver object.
+     *
+     * @param args Command line arguments
+     */
     public static void main(String args[]) {
         Driver driver = new Driver();
-        /*Customer customer1 = new Customer("Timmy");
-        QueueArrayBased checkoutLine = new QueueArrayBased();
-        try {
-            checkoutLine.enqueue(customer1);
-        } catch (Exception e) {
-            System.out.println("Your code is fucked");
-        }
-
-        System.out.println(checkoutLine.dequeue()); */
     }
 }
